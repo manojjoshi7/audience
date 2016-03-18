@@ -1,0 +1,113 @@
+<?php include_once('header.php'); ?>
+<style>
+     ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         background-color: #333;
+     }
+     li {
+        float: left;
+     }
+     li a {
+         display: block;
+         color: white;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+     }
+     li a:hover:not(.active) {
+        background-color: #111;
+     }
+     .active {
+        background-color: #4CAF50;
+     }
+     .getfilter
+     {
+         list-style-type:none;
+         background-color:#FFFFFF;
+         color:#000000;
+     }
+</style>
+<script>
+ $(document).ready(function(){
+     $("#filter").keyup(function(){
+            $("#holdfilterresult").hide();
+        var txt = $(this).val();
+         $.post("demo_ajax_audince.php", {audince: txt}, function(result){
+            $("#holdfilterresult").html(result);
+            $("#holdfilterresult").show();
+         });
+     });
+ })
+ function getid(id,value){
+ 
+     $("#filter").val(value);
+     $("#holdfilterid").val(id);
+     $("#holdfilterresult").hide();
+     $("#holdfilterresult").html("");
+ 
+ }
+</script>
+
+      <div  class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                 <form method="post" name="custom_audience_form" action="savecustomaudince.php">
+                    <input type="hidden" name="audience_form" value="1">
+                    <h1>
+                       Create custom Audience
+                    </h1>
+                     <div class="form-group">
+                       <label>Audience Name</label>
+                       <input type="text" required class="form-control" name="custom_audience_name" placeholder="Audience Name"/>
+                     </div>
+                    <div class="form-group">
+                       <label>Website Traffic</label>
+                       <input type="text" required class="form-control" name="custom_audience_traffic" placeholder="Website Traffic"/>
+                    </div>
+                   <div class="form-group">
+                       <label>Look back days</label>
+                       <input  type="number" min="1" max="180" style="max-width: 95px;" required class="form-control" name="custom_look_back_days"/>
+                    </div>
+                    <div class="form-group">
+                       <input type="submit" value="Create" class="btn btn-primary"/>
+                    </div>
+                 </form>
+            </div> <!-- /col-sm-12 -->
+        </div><!-- /row -->
+      </div><!-- /container -->
+
+       <div  class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                 <form method="post" name="lookalike_audience_form" action="savelookalikeaudince.php">
+                    <h1>Create lookalike Audience</h1>
+                     <div class="form-group">
+                       <label>Name</label>
+                       <input type="text" name="lookalikename" required class="form-control" placeholder="enter name"/>
+                    </div>
+                    <div class="form-group">
+                       <label>Source</label>
+                       <input type="text" required class="form-control" name="custom_audience_name" id="filter" placeholder="search"/>
+                       <input type="hidden" id="holdfilterid" class="form-control" name="holdfilterid"/>
+                       <div id="holdfilterresult" style="position:absolute; display:none;height:80px; width:400px;overflow-y:scroll; background-color:#FFFFFF;"></div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="form-group">
+                       <label>coutory</label>
+                       <input type="text" required class="form-control" name="custom_audience_traffic" value="US" readonly=""/>
+                    </div>
+                    <div class="form-group">
+                       <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                 </form>
+            </div> <!-- /col-sm-12 -->
+        </div><!-- /row -->
+      </div><!-- /container -->
+
+<?php include_once('footer.php'); ?>

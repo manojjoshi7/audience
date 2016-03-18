@@ -1,0 +1,87 @@
+  /*NOTE : have_LLA_item use for LLA Filter */
+  .have_LLA_item{display:none;}
+  tr.have_LLA_item td{    
+    color: #fff;
+    background-color: #5cb85c !important;
+    border-color: #4cae4c;
+  }
+
+
+  .row{
+    width:100%;
+    float:left;
+  }
+  .column_one
+  {
+    width:5%;
+    float:left;
+  }
+  .column_two
+  {
+    width:90%;
+    float:left;
+
+  }
+  .column_three
+  {
+    width:5%;
+    float:left;
+  }
+  table.gridtable {
+   font-family: verdana,arial,sans-serif;
+   font-size:12px;
+   color:#333333;
+   border-width: 1px;
+   border-color: #666666;
+   min-width: 900px;
+   border-collapse: collapse;
+   margin:0 auto;
+   margin-top:20px;
+   margin-bottom: 20px;
+ }
+ table.gridtable th {
+   border-width: 1px;
+   padding: 8px;
+   border-style: solid;
+   border-color: #666666;
+   background-color: #74BDED;
+ }
+ table.gridtable td {
+   border-width: 1px;
+   padding: 8px;
+   border-style: solid;
+   border-color: #666666;
+   background-color: #ffffff;
+   margin-left:5%;
+ }
+ /*ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.leftli {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #FFFFFF;
+}
+
+.active {
+  background-color: #4CAF50;
+}*/
+.button_class
+{
+  background-color:#74BDED; color: #333333;
+}
